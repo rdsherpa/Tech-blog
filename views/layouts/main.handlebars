@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{!-- addcss link below --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstraps/4.5.0/css/bootstraps.min.css">
-  <link rel="stylesheet" href="/Assets/public/stylesheets/style.css"> 
+  <link rel="stylesheet" href="/stylesheets/style.css"> 
   <title>Write-YourTech-Blog</title>
 </head>
 
@@ -18,6 +18,9 @@
         {{#if loggedIn}}
         <a href="/" class="nav-link">Dashboard</a>
         <button id="logout" class="logout">Logout</button>
+        {{else}}
+        <a href="/login" class="nav-link">Login</a>
+        <a href="/signup" class="nav-link">Register</a>
         {{/if}}
       </nav>
       <div class="title-container">
@@ -36,6 +39,7 @@
   {{#if loggedIn}}
   {{!-- add javascript link below --}}
   <script src=""></script>
+  {{/if}}
 </body>
 
 </html>

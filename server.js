@@ -39,10 +39,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Set up route middleware
-app.use(routes);
 
+app.get("/", (req, res) => {
+  // res.send("Testing ")   // --> This works
+  res.render("homepage"); // --> render() doesnt work
+});
+
+app.use(routes);
 //Sync with db, then start server
+
 sequelize.sync({ force: false }).then(() => {
+  console.log("connected to Databse");
   app.listen(PORT, () => {
     console.log(`Server listenng on port ${PORT}`);
   });
